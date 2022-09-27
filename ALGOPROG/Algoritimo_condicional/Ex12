@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+int main (){
+    int x;
+    printf("Me forneca a posicao o mes :");
+    scanf("%d",&x);
+    
+    if (x == 1)
+    {
+    printf("Esse mes e janeiro");
+    }else if(x ==2)
+    {
+    printf("Esse mes e fevereiro fevereiro");   
+    }
+    else if ( x == 3)
+    {
+     printf("Esse mes e marco");   
+    }else if( x==4)
+    {
+    printf("Esse mes e abril");
+    }else if ( x==5)
+    {
+     printf("Esse mes e maio ");   
+    }else if (x==6)
+    {
+    printf("Esse mes e junho");    
+    }else if (x==7)
+    {
+     printf("Esse mes e julho");   
+    } else if (x == 8)
+    {
+    printf("Esse mes e agosto");
+    }else if(x ==9)
+    {
+    printf("Esse mes e setembro ");
+    }
+    else if ( x == 10)
+    {
+    printf("Esse mes e outubro");    
+    }else if( x==11)
+    {
+    printf("Esse mes e novembro");
+    }else if ( x==12)
+    {
+     printf("Esse mes dezembro ");   
+    }else if (x>12 || x<=0)
+    {
+     printf("Esse mes nao existe ");   
+    }
+   return 0;
+}
