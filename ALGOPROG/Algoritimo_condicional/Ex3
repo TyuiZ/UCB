@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+int main (){
+    int numero,par;
+    printf("Qual o numero ?");
+    scanf("%d",&numero);
+    par = numero % 2;
+    if (par == 0)
+    {
+        printf("Esse numero e par");
+    }else{
+        printf("Esse numero e impar");
+    }
+    return 0;
+}
