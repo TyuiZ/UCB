@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int a=0;
+    float b=0;
+    double c=0;
+    char d[1], e[50];
+  
+    printf("Por favor me passe o num inteiro : ");
+    scanf("%i",&a);
+    printf("Por favor me passe o num real : ");
+    scanf("%f",&b);
+    printf("Por favor me passe o num real maior : ");
+    scanf("%lf",&c);
+    printf("Por favor me a letra : ");
+    scanf("%s",&d);
+    printf("Por favor me a string : ");
+    scanf("%s",&e);
+    
+    printf("O numero inteiro e :%d\nO numero real e :%f\nO numero real maior e :%lf\nA letra e :%s\nA string e :%s",a,b,c,d,e);
+}
