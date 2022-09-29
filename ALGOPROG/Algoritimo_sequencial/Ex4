@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(){
+    int a,b,x;
+    printf("Me passe o valor de A:");
+    scanf("%d",&a);
+    printf("Me passe o valor de :");
+    scanf("%d",&b);
+    x=a+b;
+    printf("%d + %d = %d",a,b,x);
+}
