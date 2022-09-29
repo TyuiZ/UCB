@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+int main(){
+    int i ;
+    char vendedor[50];
+    float vendas[31],salario,porcento[31];
+    printf("Qual o nome do funcionario: ");
+    scanf("%s",&vendedor);
+    for (i=0;i<31;i++){
+        printf("Quanto ele vendeu no dia %d:",i+1);
+        scanf("%f",&vendas[i]);
+    }
+    for ( i = 0; i < 31; i++)
+    {
+        porcento[i]=vendas[i]*0.15;
+    }
+    
+    for ( i = 0; i < 31; i++)
+    {
+        salario += porcento[i];
+    }
+    printf("O salario e %.2f",salario);
+}
