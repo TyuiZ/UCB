@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+#define PI  3.14159;
+
+int main(){
+int raio;
+double area, volume;
+printf("Por favor me forneça o raio :");
+scanf("%d",raio);
+area = (double)4*pow(raio,2)* PI; 
+volume =(4.0/3)*pow(raio,3)*PI;
