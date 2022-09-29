@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(){
+    int a[4],i,diferenca; 
+    for(i=0;i<4;i++){
+        printf("Me passe o valor %d:",i+1);
+        scanf("%d",&a[i]);
+    }
+    diferenca = abs( a[0]*a[1]-a[2]*a[3]);
+    printf("%d x %d - %d x %d =%d",a[0],a[1],a[2],a[3],diferenca);
+    
+    }
