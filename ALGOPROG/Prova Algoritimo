@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+int x;
+
+printf("Algoritmo e Programacao\n Nome do professor :Joyce Siqueira\n Nome do Aluno: Lucas Soares Garcia\n Matricula : UC22200062\n Diciplina : ADS \n Link do Git: https://github.com/TyuiZ/UCB/tree/main/ALGOPROG \n Sofware utilizado: VsCode\n");
+
+printf("\n\nEscolha \n 1 (Questao 1) \n 2 ( Questao 2) \n\n");
+scanf("%d", &x);
+
+switch (x)
+{
+case 1:
+float aux,oposto,adjacente,seno;
+
+printf("Digite o cateto oposto\n");
+scanf("%f",&oposto);
+printf("Digite o cateto adjacente\n");
+scanf("%f",&adjacente);
+aux=(oposto*oposto)+(adjacente*adjacente);
+printf("A hipotenusa e: %.2f\n",sqrt(aux));
+seno = oposto / aux;
+
+
+printf("O seno e %.4f\n", seno);
+
+
+    break;
+case 2:
+float a, b;
+    printf("Digite o Ano que voce nasceu");
+    if (a = 4)
+    printf("É um ano bissexto");
+    else if(b != 4 ){
+    printf("não e um ano bissexto");
+    }
+    
+    break;
+
+default:
+printf("Opcao Invalida");
+    break;
+}
+   
+    return 0;
+}
