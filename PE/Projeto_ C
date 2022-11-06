@@ -9,7 +9,7 @@ int main(){
 	
 	setlocale(LC_ALL, "PORTUGUESE"); //Setando os caracteres para o padrão português
 	
-	int id, i, j, opc, excluir, Idexcluir[1000], Ideditar[1000], editar;
+	int id[1000], i, j, opc, excluir, Idexcluir[1000], Ideditar[1000], editar;
 	char nome[1000][50], email[1000][50], sexo[1000][15], endereco[1000][100], emailb[1000][50];
     double altura[1000];
     int vacina[1000];
@@ -42,18 +42,19 @@ int main(){
     			//ID
 				printf("# Usuário (%d) esse será seu ID: ", i+1);
 				srand(time(NULL));
-    			printf("%d #\nDigite ok para prosseguir: ", id = rand()%1000); 
+				id[i] = rand()%1000;
+    			printf("%d #\nDigite ok para prosseguir: ", id[i]); 
     			scanf("%d", &id);
     			system("cls");
     		
 	            //NOME
-	            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nNome: ", i+1, id);
+	            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nNome: ", i+1, id[i]);
 	            fflush(stdin);
 	            fgets(nome[i], 50, stdin);
 	            system("cls");
 	
 	            //E-MAIL
-	            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nE-mail: ", i+1, id);
+	            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nE-mail: ", i+1, id[i]);
 	            fflush(stdin);
 	            fgets(email[i], 50, stdin);
 	            system("cls");
@@ -69,7 +70,7 @@ int main(){
             } while (strchr(email[i], '@') == 0);
             
             //SEXO
-            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\n", i+1, id);
+            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\n", i+1, id[i]);
             printf("Digite uma das opções abaixo:\n-Feminino\n-Masculino\n-Não declarar\nSexo: ");
             fflush(stdin);
             scanf("%s", &sexo[i]);
@@ -87,13 +88,13 @@ int main(){
 			} while(strcmp(sexo[i], "Feminino") != 0 && strcmp(sexo[i], "Masculino") != 0 && strcmp(sexo[i], "Não declarar") != 0);
 
             //ENDEREÇO
-            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nEndereço: ", i+1, id);
+            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nEndereço: ", i+1, id[i]);
             fflush(stdin);
             fgets(endereco[i], 100, stdin);
             system("cls");
             
             //ALTURA
-            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nAltura (entre 1 e 2 metros): ", i+1, id);
+            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nAltura (entre 1 e 2 metros): ", i+1, id[i]);
             fflush(stdin);
             scanf("%lf", &altura[i]);
             system("cls");
@@ -109,7 +110,7 @@ int main(){
 			} while(altura[i] < 1 || altura[i] > 2);
             
             //VACINA
-            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nVacina:\n", i+1, id);
+            printf("# INCLUIR UM USUÁRIO (USUÁRIO: %d, ID: %d)#\n\nVacina:\n", i+1, id[i]);
             printf("Digite uma das opções abaixo:\n0. Não vacinei\n1. Vacinei\nVocê vacinou? ");
             fflush(stdin);
             scanf("%d", &vacina[i]);
@@ -127,9 +128,10 @@ int main(){
             
             printf("\n# USUÁRIO #%d CADASTRADO COM SUCESSO! #\n\n\n", i+1);
 
-    		goto menu;
+    		
+
+			goto menu;
 			break;
-}
 			
 		case 2: //EDITAR (LUCAS)
 
@@ -139,15 +141,16 @@ int main(){
 			scanf("%d", &Ideditar);
 			system("cls");
 
-			if(id == Ideditar[i]){
+			if(id[i] == Ideditar[i]){
 				printf("# Editar Usuário #\n\n");
 				printf("Usuário: %s", nome);
 				printf("\nDigite uma das opções abaixo: ", nome);
-			    printf("Qual informacao voce deseja alterar ?\n[1]: Nome\n[2]: Email\n[3]: Sexo\n[4]: Endereco\n[5]: Altura\n[6]: Vacina\n\n");
+			    printf("Qual informação você deseja alterar ?\n[1]: Nome\n[2]: Email\n[3]: Sexo\n[4]: Endereco\n[5]: Altura\n[6]: Vacina\n\n");
 				fflush(stdin);
 				scanf("%d", &editar);
+				system("cls");
 		}
-		else if(id != Ideditar[i]){
+		else if(id[i] == Ideditar[i]){
 				printf("# Editar usuário #");
 				printf("\n\nEste Id não corresponde à nenhum usuário\nVocê será encaminhado de volta ao menu!");
 				Sleep(7000);
@@ -157,12 +160,13 @@ int main(){
 		switch (editar){
 		case 1:
 		    // EDITAR NOME
-			printf("O Nome que deseja:");
+			printf("O Nome que deseja: ");
 			fflush(stdin);
 			fgets(nome[i], 50, stdin);
 			Sleep(7000);
 			system("cls");
-            printf("Usuario Editado com sucesso\n Você sera enviado ao Menu");
+            printf("Usuário Editado com sucesso\n Você será enviado ao Menu");
+            system("cls");
             break;
 			goto menu;
 		case 2:
@@ -204,9 +208,10 @@ int main(){
             		system("cls");
 				}
 			} while(strcmp(sexo[i], "Feminino") != 0 && strcmp(sexo[i], "Masculino") != 0 && strcmp(sexo[i], "Não declarar") != 0);
-			Sleep(7000);
+			Sleep(5000);
 			system("cls");
-			printf("Sexo alterado com sucesso\n Você sera enviado ao Menu");
+			printf("Sexo alterado com sucesso\nVocê sera enviado ao Menu");
+			system("cls");
 			goto menu;
 		    break;
 		case 4:
@@ -214,8 +219,8 @@ int main(){
             fflush(stdin);
             fgets(endereco[i], 100, stdin);
             system("cls");
-			Sleep(7000);
-			printf("Endereço alterado com sucesso\n Você sera enviado ao Menu");
+			Sleep(5000);
+			printf("Endereço alterado com sucesso\nVocê sera enviado ao Menu");
 			goto menu;
 			break;
 		case 5:
@@ -236,7 +241,8 @@ int main(){
 			} while(altura[i] < 1 || altura[i] > 2);
 			system("cls");
 			Sleep(7000);
-			printf("Altura alterado com sucesso\n Você sera enviado ao Menu");
+			printf("Altura alterada com sucesso\nVocê sera enviado ao Menu");
+			system("cls");
 			goto menu;
 			break;
 		case 6:
@@ -258,7 +264,8 @@ int main(){
 			} while(vacina[i] != 1 && vacina[i] != 0);
 			system("cls");
 			Sleep(7000);
-			printf("Vacina alterado com sucesso\n Você sera enviado ao Menu");
+			printf("Vacina alterada com sucesso\nVocê sera enviado ao Menu");
+			system("cls");
 			goto menu;
 			break;
 		default:
@@ -278,7 +285,7 @@ int main(){
 	
 			//Pergunta se usuário deseja excluir ou não.
 			
-		if(id == Idexcluir[i]){
+		if(id[i] == Idexcluir[i]){
 				printf("# Excluir Usuário #\n\n");
 				printf("Usuário: %s", nome);
 				printf("\nDigite uma das opções abaixo: ", nome);
@@ -288,7 +295,7 @@ int main(){
 				fflush(stdin);
 				scanf("%d", &excluir);
 		}
-		else if(id != Idexcluir[i]){
+		else if(id[i] != Idexcluir[i]){
 				printf("# Excluir usuário #");
 				printf("\n\nEste Id não corresponde à nenhum usuário\nVocê será encaminhado de volta ao menu!");
 				Sleep(7000);
@@ -301,17 +308,14 @@ int main(){
 		
 		if(excluir==0){
 			
-			 	Idexcluir[id] = 0;
-                strcpy(nome[id], "");
-                j--;
+			 	i--;
 			
 			printf("\nUsuário excluído com sucesso");
 			Sleep(4000);
 			system("cls");
 			goto menu;
 		
-			
-			
+						
 			
 		}
 		
@@ -320,7 +324,6 @@ int main(){
 				Sleep(3000);
 				system("cls");
 				goto menu;
-		
 		}
 			break;
 			
@@ -332,7 +335,7 @@ int main(){
 		fgets(emailb[i], 50, stdin);
 				//Verificação dos emails
 		if(strcmp(email[i],emailb[i])==0){
-			printf("Nome: %sId: %d\nSexo: %s\nEndereço: %s", nome, id, sexo, endereco);
+			printf("Nome: %sId: %d\nSexo: %s\nEndereço: %s", nome, id[i], sexo, endereco);
 			printf("\nEm cinco segundos você será encaminhado de volta ao menu.");
 			Sleep(5000);
 			system("cls");
@@ -346,9 +349,25 @@ int main(){
 		}
 		
 			break;
+}
 			
 		case 5: //EXIBIR TODOS (JOAO)
 		
+			printf("## USUÁRIOS CADASTRADOS ##\n\n");
+
+			for(i=0;i<j;i++){
+				printf("########## USUÁRIO %d ##########\n\n", i+1);
+				printf("Id: %d\nNome: %sE-mail: %sSexo: %s\nAltura: %.lf metros\nVacinou: ", id[i], nome[i], email[i], sexo[i], altura[i]);
+					if(vacina[i] = 1){
+					printf("Sim\n\n");
+				} else ("Não\n\n");
+				
+				}
+				int set;
+				printf("Digite ok aqui, e em cinco segundos será direcionado de volta à tela de ínicio: ");
+				scanf("%d", &set);	
+				Sleep(3000);
+				system("cls");
 			goto menu;
 			break;
 			
@@ -367,6 +386,7 @@ int main(){
 			printf("# AVISO: Opção inválida! #\n\n");
 			goto menu;
 	
+
 }
 	
 	return 0;
