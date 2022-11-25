@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+struct DadosAluno{
+    char nome[10];
+    int idade;
+};
+
+
+int main(){
+
+    struct DadosAluno analisar;
+
+    
+    printf("-----REGISTRO------\n");
+    printf("\nDigite nome do(a) aluno(a):\n ");
+    fflush(stdin);
+    fgets(analisar.nome, 50, stdin);
+
+    printf("\nDigite a idade de %s:\n ", analisar.nome);
+    scanf("%d", &analisar.idade);
+
+    printf("\n ALUNO (A) %s TEM %d ANOS", analisar.nome, analisar.idade);
+    
+    return 0;
+}
