@@ -6,12 +6,12 @@ int main (){
 	int coluna1 = 0;
 	int coluna2 = 0;
 	int coluna3 = 0;
-	int i;
-	int j;
+	int i, j;
+
 	
 	for (i=0; i<3; i++){
         for (j=0; j<3; j++){
-            printf ("Informe o valor da matrix [%d] [%d]" , i, j);
+            printf ("Digite o valor da matrix [%d] [%d]" , i, j);
             scanf("%d", &matriz[i][j]);
         }
     }
@@ -36,6 +36,6 @@ int main (){
        coluna3 = coluna3 + matriz[i+1][i];
     }
     
-	printf("Diagonal Principal eh: %d\nValor da diagonal superior eh: %d\nValor da diagonal inferior eh: %d ", coluna1, coluna2, coluna3);
+	printf("Diagonal Principal e: %d\nValor da diagonal inferior e: %d Valor da diagonal superior e: %d\n ", coluna1, coluna3, coluna2);
     
 }
