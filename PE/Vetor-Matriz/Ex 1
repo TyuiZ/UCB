@@ -4,10 +4,11 @@
 #include <stdlib.h>
 
 int main (){
+
     int notas[10], i, j, repeticao[10];
 
     for(i = 0; i < 10; i++){
-       printf("Informe a nota do aluno %d: ", i);
+       printf("Digite a Nota do aluno: %d: ", i);
        scanf("%d", &notas[i]);
     }
     
