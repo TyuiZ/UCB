@@ -2,11 +2,9 @@
 #include <math.h>
 
 int main(){
-    int i;
-    int j;
-    int a[4][4];
-    int b[4][4];
-    int c[4][4];
+    int i, j;
+    int a[4][4], b[4][4], c[4][4];
+   
 
     for(i=0; i<4; i++){
         for(j=0; j<4; j++){
