@@ -23,44 +23,44 @@ int main(){
 	
 	
 	for(x=0; x<TAM; x++){
-		printf("_________CADASTRO________");
-		printf("\n\nInforme seu nome........: ");
+		printf("CADASTRO");
+		printf("\n\nDigite seu nome: ");
         fflush(stdin);
 		fgets (cliente[x].nome, 15, stdin);
-		printf("Informe seu salario.....: ");
+		printf("Digite seu salario");
 		fflush(stdin);
 		scanf ("%f", &cliente[x].salario);
-		printf("Informe sua idade.......: ");
+		printf("Digite sua idade: ");
 		fflush(stdin);
 		scanf ("%d", &cliente[x].idade);
-		printf("Informe seu sexo........: ");
+		printf("Digite seu sexo: ");
 		fflush(stdin);
 		scanf ("%c", &cliente[x].sexo);
-		printf("Informe seu RG..........: ");
-		fflush(stdin);
-		fgets (cliente[x].rg, 10, stdin);
-		printf("Informe seu cpf.........: ");
-		fflush(stdin);
-		fgets (cliente[x].cpf, 15, stdin);
-		printf("Informe seu Estado civil: ");
-		fflush(stdin);
-		fgets (cliente[x].estadoCivil, 10, stdin);
-		printf("Informe seu telefone....: ");
+		printf("Digit seu telefone: ");
 		fflush(stdin);
 		fgets (cliente[x].tel, 11, stdin);
-		printf("Informe sua cidade......: ");
+		printf("Digite seu RG: ");
+		fflush(stdin);
+		fgets (cliente[x].rg, 10, stdin);
+		printf("Digite seu cpf: ");
+		fflush(stdin);
+		fgets (cliente[x].cpf, 15, stdin);
+		printf("Digite seu Estado civil: ");
+		fflush(stdin);
+		fgets (cliente[x].estadoCivil, 10, stdin);
+		printf("Digit sua cidade: ");
 		fflush(stdin);
 		fgets (cliente[x].end.cidade, 10, stdin);
-		printf("Informe seu estado......: ");
+		printf("Digit seu estado: ");
 		fflush(stdin);
 		fgets (cliente[x].end.estado, 2, stdin);
-		printf("Informe sua rua.........: ");
+		printf("Digit sua rua: ");
 		fflush(stdin);
 		fgets (cliente[x].end.rua, 10, stdin);
-		printf("Informe seu cep.........: ");
+		printf("Digit seu cep: ");
 		fflush(stdin);
 		fgets (cliente[x].end.cep, 8, stdin);
-		printf("Informe seu bairro......: ");
+		printf("Digit seu bairro: ");
 		fflush(stdin);
 		fgets (cliente[x].end.bairro, 10, stdin);
 		printf("\n");
@@ -72,9 +72,9 @@ int main(){
 		}
 	}
 	
-	printf ("___________________________");
+	
 	printf ("\nMaior idade cadastrada: %d\n", maiorIdade);
-	printf ("___________________________\n");
+	
 	
 	char clienteM[5][15];
 	char clienteS[5];
@@ -92,7 +92,7 @@ int main(){
 		printf("%s", &clienteM[x]);
 	}
 	
-	printf ("\n___________________________\n");
+	
 	
 	for (x=0; x<TAM; x++){
 		if(cliente[x].salario > 1000){
@@ -100,7 +100,7 @@ int main(){
 		}
 	}
 	
-	printf ("___________________________");
+
 	
 	int rgPesquisa;
 	
