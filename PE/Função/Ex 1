@@ -7,7 +7,7 @@ int main(){
     int i;
     
 	for ( i = 0; i < 2; i++){
-        printf("Informe o numero: ");
+        printf("Digite o numero que deseja: ");
         scanf("%d", &a[i]);
     }
     
