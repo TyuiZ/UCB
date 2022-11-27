@@ -17,15 +17,15 @@ void dataInput(){
 
     for (i = 0; i < 10; i++)
     {
-        printf("Informe a marca do veiculo %d: ", i+1);
+        printf("Digite a marca do veiculo %d: ", i+1);
         fgets(veiculos[i].marca, 20, stdin);
-        printf("Informe o modelo do veiculo %d: ", i+1);
+        printf("Digite o modelo do veiculo %d: ", i+1);
         fgets(veiculos[i].modelo, 20, stdin);
-        printf("Informe a cor do veiculo %d: ", i+1);
+        printf("Digite a cor do veiculo %d: ", i+1);
         fgets(veiculos[i].cor, 15, stdin);
-        printf("Informe a motorizacao do veiculo %d: ", i+1);
+        printf("Digite a motorizacao do veiculo %d: ", i+1);
         fgets(veiculos[i].motorizacao, 50, stdin);
-        printf("Informe a quantidade de portas do veiculo %d: ", i+1);
+        printf("Digite a quantidade de portas do veiculo %d: ", i+1);
         scanf("%d", &veiculos[i].portas);
         fflush(stdin);
     }
@@ -39,9 +39,9 @@ void dataOutput(){
     for (i = 0; i < 10; i++)
     {
         printf("Marca do veiculo %d: %s",i+1, veiculos[i].marca);
-        printf("Modelo do veiculo %d: %s",i+1, veiculos[i].modelo);
         printf("Cor do veiculo %d: %s",i+1, veiculos[i].cor);
         printf("Motorizacao do veiculo %d: %s",i+1, veiculos[i].motorizacao);
+        printf("Modelo do veiculo %d: %s",i+1, veiculos[i].modelo);
         printf("O veiculo %d possui &d portas: %s",i+1, veiculos[i].portas);
     }
     
@@ -53,7 +53,7 @@ int main(void){
 
     do{
         printf("ESCOLHA UMA OPCAO\n");
-        printf("[1] Inserir dados\n");
+        printf("[1] Colocar dados\n");
         printf("[2] Mostrar dados\n");
         scanf("%d", &opt);
         fflush(stdin);
