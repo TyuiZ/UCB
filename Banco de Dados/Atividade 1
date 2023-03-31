@@ -1,0 +1,28 @@
+CREATE DATABASE cadastro;
+
+use cadastro;
+
+CREATE TABLE pessoas (
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+rg VARCHAR(7) NOT NULL,
+cpf VARCHAR(11) NOT NULL,
+limite DECIMAL(10,2),
+PRIMARY KEY (id)
+);
+
+INSERT INTO pessoas (nome, rg, cpf, limite) VALUES
+('Fulano1', '0000001','00000000001', 1000),
+('Fulano2', '0000002','00000000002', 700),
+('Fulano3', '0000003','00000000003', 800),
+('Fulano4', '0000004','00000000004', 2000),
+('Fulano5', '0000005','00000000005', 3000),
+('Fulano6', '0000006','00000000006', 500),
+('Fulano7', '0000007','00000000007', 3000),
+('Fulano8', '0000008','00000000008', 1500),
+('Fulano9', '0000009','00000000009', 1200),
+('Fulano10', '0000010','00000000010', 1700);
+
+UPDATE pessoas SET limite = 500 WHERE id = 7;
+
+DELETE FROM pessoas WHERE limite > 1500;
